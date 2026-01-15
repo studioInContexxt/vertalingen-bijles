@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Studio InContexxt — Traduceri & Meditații</title>
+  <meta name="description" content="Studio InContexxt oferă servicii profesionale de traducere și meditații pentru elevi și studenți. Calitate, promptitudine și prețuri corecte." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --white:#fff;
+  --magenta:#d60e80;
+  --dark-blue:#0b2545;
+  --muted:#6b7280;
+  --bg:#f6f8fb;
+  --radius:16px;
+  --border:rgba(11,37,69,.08);
+  --shadow:0 12px 30px rgba(11,37,69,.08);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:linear-gradient(180deg,#ffffff,var(--bg));
+  color:var(--dark-blue);
+  line-height:1.6;
+}
+
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:24px;
+}
+
+/* HEADER */
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+
+.brand{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.logo{
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--magenta),var(--dark-blue));
+  color:#fff;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.brand h1{
+  margin:0;
+  font-size:1.25rem;
+}
+
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--dark-blue);
+  font-weight:600;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:var(--magenta);
+  transition:.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:48px;
+  padding:64px 0;
+  align-items:center;
+  text-align: justify;
+}
+
+.eyebrow{
+  color:var(--magenta);
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:.8rem;
+}
+
+.hero h2{
+  font-size:2.4rem;
+  line-height:1.25;
+  margin:12px 0 16px;
+  text-align: left;
+}
+
+.muted{color:var(--muted)}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:14px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.btn-primary{
+  background:var(--magenta);
+  color:#fff;
+  box-shadow:0 14px 32px rgba(255,0,128,.28);
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 20px 44px rgba(255,0,128,.38);
+}
+
+.btn-ghost{
+  border:2px solid var(--border);
+  color:var(--dark-blue);
+}
+
+/* CARDS */
+.card{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:26px;
+  box-shadow:var(--shadow);
+}
+
+/* FORMS */
+form{
+  display:grid;
+  gap:14px;
+}
+
+input, textarea{
+  padding:14px 16px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  font-family:inherit;
+  font-size:.95rem;
+}
+
+input:focus, textarea:focus{
+  outline:none;
+  border-color:var(--magenta);
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+/* SECTIONS */
+section{
+  margin-bottom:72px;
+}
+
+section h2{
+  font-size:1.9rem;
+  margin-bottom:16px;
+  position:relative;
+}
+
+section h2::after{
+  content:"";
+  display:block;
+  width:56px;
+  height:4px;
+  background:var(--magenta);
+  border-radius:4px;
+  margin-top:8px;
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+}
+
+/* LISTS */
+ul{
+  padding-left:20px;
+}
+
+ul.muted li{
+  margin-bottom:6px;
+}
+
+section{
+  scroll-margin-top: 120px;
+}
+
+.language-image{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.language-image img{
+  width:100%;
+  max-width:270px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+}
+
+.despre{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  text-align: justify;
+}
+
+#eu{
+  max-width:300px;
+  width:100%;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  object-fit:cover;
+}
+
+#langImage{
+  max-width:250px;
+}
+
+
+/* FOOTER */
+footer{
+  background:#fff;
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:28px;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    padding:40px 0;
+  }
+  .despre{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  #eu{
+    max-width:260px;
+  }
+  .services{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">IC</div>
+      <div>
+        <h1>Studio InContexxt</h1>
+        <div class="muted" id="subtitle">Traduceri • Meditații</div>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#despre" id="navDespre">Despre mine</a></li>
+        <li><a href="#servicii" id="navServicii">Servicii</a></li>
+        <li><a href="#preturi" id="navPreturi">Prețuri</a></li>
+        <li><a href="#contact" id="navContact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Selector limbă -->
+    <select onchange="setLang(this.value)" id="langSelect">
+      <option value="nl">NL</option>
+      <option value="ro">RO</option>
+      <option value="en">EN</option>
+    </select>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="hero">
+  <div>
+    <div class="eyebrow" id="heroEyebrow">Profesional • Prompt • Flexibil</div>
+    <h2 id="heroTitle">Traduceri de calitate și meditații care aduc rezultate</h2>
+    <p class="muted" id="heroText">
+      <b>Bine ai venit la Studio InContexxt!</b>
+      <br><br>
+      Lecții personalizate de olandeză și servicii profesionale de traduceri.
+      Fie că ești la început, te pregătești pentru examenul de integrare sau ai nevoie de o traducere rapidă aici vei primi ajutorul potrivit.
+    </p>
+    <br>
+    <a class="btn btn-primary" href="https://wa.me/31684215935" id="heroBtn">Programare ședință gratuită (20 min)</a>
+  </div>
+
+<aside class="card language-image">
+  <img id="langImage" src="ro.png" alt="Romanian language" />
+</aside>
+
+</section>
+
+<section id="despre">
+  <h2 id="aboutTitle">Despre mine</h2>
+
+  <div class="despre">
+<img id="eu" src="eu.jpg" alt="Teodora – profesor" />
+
+    <p class="muted" id="aboutText">
+      Eu sunt Teodora, profesor licențiat și absolventă a Academiei de Profesori din Olanda (Docentenacademie). Am o dublă diplomă: studii universitare în Limbi Romanice și Cultură și calificare pedagogică oficială pentru predare. Predau limba olandeză de peste cinci ani și vorbesc fluent română, olandeză, engleză și spaniolă.
+      <br><br>
+      Fiind eu însămi fostă elevă NT2, înțeleg perfect cât de provocator poate fi procesul. Din acest motiv, stilul meu de predare este calm, structurat și centrat pe nevoile cursantului.
+      <br><br>
+      Scopul meu este să te ajut să înveți limba olandeză într-un mod accesibil, logic și eficient.
+    </p>
+
+   
+  </div>
+</section>
+
+
+<section id="servicii">
+  <h2 id="servicesTitle">Serviciile noastre</h2>
+
+  <div class="services">
+
+    <!-- TRADUCERI -->
+    <div class="card">
+      <h3 id="translationsTitle">Traduceri (NL–RO, RO–NL, EN–NL/RO)</h3>
+      <p class="muted" id="translationsText">
+        ✔ texte generale<br>
+        ✔ e-mailuri profesionale<br>
+        ✔ website-uri<br>
+        ✔ CV-uri & scrisori de intenție<br>
+        ✔ texte creative<br>
+        ✔ documente non-juridice<br>
+        ✔ corectură & editare
+      </p>
+
+      <p class="muted" style="margin-top:12px" id="translationRates">
+        <strong>Tarife orientative</strong><br>
+        – 0,08–0,12 € / cuvânt, în funcție de complexitate<br>
+        – Tarif minim: 15–20 € / document<br>
+        – Traduceri urgente: +20–30%
+      </p>
+
+      <p class="muted" style="margin-top:8px" id="translationNote">
+        Întotdeauna trimit oferta înainte de începerea lucrării.
+      </p>
+    </div>
+
+    <!-- LECȚII / MEDITAȚII -->
+    <div class="card">
+      <h3 id="lessonsTitle">Lecții & Meditații</h3>
+      <p class="muted" id="lessonsText">
+        <strong>Ce ofer?</strong><br>
+        ✔ Lecții individuale online<br>
+        ✔ Nivel A0 → A2 / B1<br>
+        ✔ Alfabetizare<br>
+        ✔ Pregătire pentru examenul de integrare<br>
+        ✔ Antrenament de conversație<br>
+        ✔ Meditații pentru elevi (engleză, olandeză, matematică)<br>
+        ✔ Metodă personalizată pentru fiecare student
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="preturi">
+  <h2 id="pricesTitle">Prețuri</h2>
+  <p class="muted" id="pricesText">
+    <!-- Tarifele sunt stabilite în funcție de nivel și obiective, discutate într-o
+    ședință gratuită de 20 de minute.
+<br><br>
+  În cadrul ședinței de evaluare:
+<ul class="muted">
+  <li>determinăm nivelul tău actual</li>
+  <li>discutăm obiectivele tale</li>
+  <li>creăm împreună un plan personal pas cu pas</li>
+</ul> -->
+
+  </p>
+</section>
+
+<section id="contact">
+  <h2 id="contactTitle">Contact</h2>
+  <p id="contactText"></p>
+</section>
+
+
+</main>
+
+<footer>
+  © Studio InContexxt
+</footer>
+
+<script>
+const texts = {
+   ro:{
+    subtitle:"Traduceri • Meditații",
+    navDespre:"Despre mine",
+    navServicii:"Servicii",
+    navPreturi:"Prețuri",
+    navContact:"Contact",
+    heroEyebrow:"Profesional • Prompt • Flexibil",
+    heroTitle:"Traduceri de calitate și meditații care aduc rezultate",
+    heroText:`<b>Bine ai venit la Studio InContexxt!</b><br><br>
+Lecții personalizate de olandeză și servicii profesionale de traduceri.
+Fie că ești la început, te pregătești pentru examenul de integrare sau ai nevoie de o traducere rapidă aici vei primi ajutorul potrivit.`,
+    heroBtn:"Programare ședință de cunoaștere gratuită (20 min)",
+    quickContact:"Contact rapid",
+    sendBtn:"Trimite",
+    aboutTitle:"Despre mine",
+    aboutText:`Mă numesc Teodora, iar relația mea cu limba olandeză s-a construit treptat, odată cu viața mea aici. M-am mutat în Olanda la vârsta de 14 ani, într-o perioadă în care totul era nou, iar limba era poate cea mai mare provocare. Fiind eu însămi cursant NT2, am trecut prin aceleași etape prin care trec și cei care învață astăzi: confuzie, efort, mici victorii și multă perseverență. Tocmai această experiență m-a apropiat în mod natural de predare și de dorința de a-i ajuta și pe alții să își găsească locul într-o țară nouă.
+Pe acest parcurs, interesul meu pentru limbă și educație s-a transformat într-o direcție profesională clară. În ultimii ani m-am concentrat tot mai mult pe predare, iar de peste cinci ani predau limba olandeză. Studiile universitare în domeniul lingvistic și pregătirea pedagogică stau la baza modului în care lucrez cu fiecare cursant.
+Ceea ce mă definește ca profesor este dorința de a explica logica din spatele limbii. Nu doar ce spui, ci și de ce funcționează așa. În același timp, pun accent pe aplicare, pe conversație și pe folosirea activă a limbii în situații reale.
+Lucrez într-un mod structurat și clar, într-o atmosferă calmă și sigură, adaptată ritmului fiecărei persoane.
+Scopul este ca olandeza să nu mai fie doar ceva de memorat, ci o limbă pe care o înțelegi și o folosești cu încredere.`,
+    translationsTitle:"Traduceri (NL–RO, RO–NL, EN–NL/RO)",
+    translationsText:"✔ texte generale<br>✔ e-mailuri profesionale<br>✔ website-uri<br>✔ CV-uri & scrisori de intenție<br>✔ texte creative<br>✔ documente non-juridice<br>✔ corectură & editare",
+    translationRates:"<strong>Tarife orientative</strong><br>– 0,08–0,12 € / cuvânt, în funcție de complexitate<br>– Tarif minim: 15–20 € / document<br>– Traduceri urgente: +20–30%",
+    translationNote:"Întotdeauna trimit oferta înainte de începerea lucrării.",
+    lessonsTitle:"Lecții & Meditații",
+    lessonsText:"<strong>Ce ofer?</strong><br>✔ Lecții individuale online<br>✔ Nivel A0 → A2 / B1<br>✔ Alfabetizare<br>✔ Pregătire pentru examenul de integrare<br>✔ Antrenament de conversație<br>✔ Meditații pentru elevi (engleză, olandeză, matematică)<br>✔ Metodă personalizată pentru fiecare student",
+    servicesTitle:"Serviciile noastre",
+    servicesText:"Traduceri și lecții personalizate.",
+    pricesTitle:"Prețuri",
+    pricesText:`Tarifele sunt stabilite în funcție de nivel și obiective, discutate într-o
+ședință gratuită de 20 de minute.
+<br><br>
+În cadrul ședinței de evaluare:
+<ul class="muted">
+  <li>determinăm nivelul tău actual</li>
+  <li>discutăm obiectivele tale</li>
+  <li>creăm împreună un plan personal pas cu pas</li>
+</ul>`,
+    contactTitle:"Contact",
+    contactText: `
+📩 E-mail: studioincontexxt@gmail.com<br>
+📱 WhatsApp: +31684215935<br>
+🏢 CUI: 99083140<br>
+📍 Lecții online, oriunde în lume
+`
+
+  },
+  en:{
+    subtitle:"Translations • Tutoring",
+    navDespre:"About me",
+    navServicii:"Services",
+    navPreturi:"Prices",
+    navContact:"Contact",
+    heroEyebrow:"Professional • Prompt • Flexible",
+    heroTitle:"Professional translations and tutoring that deliver results",
+    heroText:`<b>Welcome to Studio InContexxt!</b><br><br>
+Personalized Dutch lessons and professional translation services.
+Whether you are a beginner, preparing for the integration exam, or need a quick translation, here you will get the right help.`,
+    heroBtn:"Free session booking (20 min)",
+    quickContact:"Quick contact",
+    sendBtn:"Send",
+    aboutTitle:"About me",
+    aboutText:`My name is Teodora and my relationship with the Dutch language grew together with my life in the Netherlands. I moved here at the age of fourteen, at a time when everything was new and unfamiliar, and the language was one of the biggest challenges. As a former NT2 student myself, I went through the same stages many learners experience today: confusion, effort, small victories and a lot of perseverance. That personal journey is what naturally drew me toward teaching and toward supporting others as they find their way in a new country.
+Over the years, this interest in language and learning developed into a clear professional path. For more than five years now, I have been teaching Dutch, supported by my academic background in linguistics and my formal teacher training.
+What defines me as a teacher is my focus on understanding the logic behind the language. Not only what you say, but why it works the way it does. At the same time, I place great importance on practice, conversation and using Dutch actively in real-life situations.
+I work in a structured and clear way, in a calm and supportive environment that is adapted to each learner’s pace.
+My goal is for Dutch to become more than something to memorise, but a language you truly understand and can use with ease in everyday life.`,
+    translationsTitle:"Translations (NL–RO, RO–NL, EN–NL/RO)",
+    translationsText:"✔ general texts<br>✔ professional emails<br>✔ websites<br>✔ CVs & cover letters<br>✔ creative texts<br>✔ non-legal documents<br>✔ proofreading & editing",
+    translationRates:"<strong>Indicative rates</strong><br>– 0.08–0.12 € / word, depending on complexity<br>– Minimum rate: 15–20 € / document<br>– Urgent translations: +20–30%",
+    translationNote:"I always send a quote before starting the work.",
+    lessonsTitle:"Lessons & Tutoring",
+    lessonsText:"<strong>What I offer?</strong><br>✔ Online individual lessons<br>✔ Level A0 → A2 / B1<br>✔ Literacy<br>✔ Integration exam preparation<br>✔ Conversation practice<br>✔ Tutoring for students (English, Dutch, Math)<br>✔ Personalized method for each student",
+    servicesTitle:"Our services",
+    servicesText:"Translations and personalized lessons.",
+    pricesTitle:"Prices",
+    pricesText:`Set individually after a free intake session.
+    <br><br>
+În cadrul ședinței de evaluare:
+<ul class="muted">
+  <li>determinăm nivelul tău actual</li>
+  <li>discutăm obiectivele tale</li>
+  <li>creăm împreună un plan personal pas cu pas</li>
+</ul>`,
+    contactTitle:"Contact",
+    contactText: `
+📩 Email: studioincontexxt@gmail.com<br>
+📱 WhatsApp: +31684215935<br>
+🏢 Company Registration Number: 99083140<br>
+📍 Online lessons worldwide
+`
+
+  },
+  nl:{
+    subtitle:"Vertalingen • Bijles",
+    navDespre:"Over mij",
+    navServicii:"Diensten",
+    navPreturi:"Prijzen",
+    navContact:"Contact",
+    heroEyebrow:"Professioneel • Snel • Flexibel",
+    heroTitle:"Professionele vertalingen en bijles die resultaat leveren",
+    heroText:`<b>Welkom bij Studio InContexxt!</b><br><br>
+Persoonlijke Nederlandse lessen en professionele vertalingen.
+Of je nu een beginner bent, je voorbereidt op het integratie-examen, of een snelle vertaling nodig hebt, hier krijg je de juiste hulp.`,
+    heroBtn:"Gratis sessie boeken (20 min)",
+    quickContact:"Snel contact",
+    sendBtn:"Verzenden",
+    aboutTitle:"Over mij",
+    aboutText:`Mijn naam is Teodora en mijn band met de Nederlandse taal is gegroeid samen met mijn leven in Nederland. Op mijn veertiende kwam ik hier wonen, in een periode waarin alles nieuw was en de taal één van de grootste uitdagingen vormde. Als voormalig NT2-leerling heb ik zelf ervaren hoe het voelt om stap voor stap een nieuwe taal eigen te maken, met onzekerheid, doorzettingsvermogen en kleine overwinningen. Die ervaring bracht mij vanzelf richting het onderwijs en het begeleiden van anderen die hun plek proberen te vinden in een nieuw land.
+In de jaren daarna is die interesse in taal en leren uitgegroeid tot een duidelijke professionele richting. Inmiddels geef ik al meer dan vijf jaar les in het Nederlands, met een academische achtergrond in taalwetenschappen en een officiële pedagogische opleiding als basis.
+Wat mij als docent kenmerkt, is mijn focus op de logica achter de taal. Niet alleen wat je zegt, maar ook waarom het zo werkt. Daarnaast besteed ik veel aandacht aan toepassen, aan spreken en aan het actief gebruiken van de taal in alledaagse situaties.
+Ik werk op een gestructureerde en heldere manier, in een rustige en veilige leeromgeving die aansluit bij het tempo van iedere cursist.
+Mijn doel is dat Nederlands niet iets blijft om uit het hoofd te leren, maar een taal wordt die je begrijpt en met vertrouwen kunt gebruiken in het dagelijks leven.`,
+    translationsTitle:"Vertalingen (NL–RO, RO–NL, EN–NL/RO)",
+    translationsText:"✔ algemene teksten<br>✔ professionele e-mails<br>✔ websites<br>✔ CV's & sollicitatiebrieven<br>✔ creatieve teksten<br>✔ niet-juridische documenten<br>✔ correctie & redactie",
+    translationRates:"<strong>Indicatieve tarieven</strong><br>– 0,08–0,12 € / woord, afhankelijk van complexiteit<br>– Minimumtarief: 15–20 € / document<br>– Spoedvertalingen: +20–30%",
+    translationNote:"Ik stuur altijd een offerte voordat ik begin met het werk.",
+    lessonsTitle:"Lessen & Bijles",
+    lessonsText:"<strong>Wat ik aanbied?</strong><br>✔ Online individuele lessen<br>✔ Niveau A0 → A2 / B1<br>✔ Alfabetisering<br>✔ Voorbereiding op het integratie-examen<br>✔ Gespreksvaardigheid<br>✔ Bijles voor studenten (Engels, Nederlands, Wiskunde)<br>✔ Persoonlijke methode voor elke student",
+    servicesTitle:"Onze diensten",
+    servicesText:"Vertalingen en persoonlijke lessen.",
+    pricesTitle:"Prijzen",
+    pricesText:`Vastgesteld na een gratis intake.
+    <br><br>
+În cadrul ședinței de evaluare:
+<ul class="muted">
+  <li>determinăm nivelul tău actual</li>
+  <li>discutăm obiectivele tale</li>
+  <li>creăm împreună un plan personal pas cu pas</li>
+</ul>`,
+    contactTitle:"Contact",
+    contactText: `
+📩 E-mail: studioincontexxt@gmail.com<br>
+📱 WhatsApp: +31684215935<br>
+🏢 KVK: 99083140<br>
+📍 Online lessen wereldwijd
+`
+
+  }
+};
+
+function setLang(lang){
+  document.documentElement.lang = lang;
+  const elems = [
+    "subtitle","navDespre","navServicii","navPreturi","navContact",
+    "heroEyebrow","heroTitle","heroText","heroBtn",
+    "quickContact","sendBtn",
+    "aboutTitle","aboutText",
+    "translationsTitle","translationsText","translationRates","translationNote",
+    "lessonsTitle","lessonsText",
+    "servicesTitle","servicesText",
+    "pricesTitle","pricesText",
+    "contactTitle","contactText"
+  ];
+  elems.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el && texts[lang][id]) el.innerHTML = texts[lang][id];
+  });
+  const img = document.getElementById("langImage");
+if(img){
+  img.src = lang + ".png"; 
+  img.alt = "Language " + lang.toUpperCase();
+}
+
+}
+
+setLang("nl");
+</script>
+
+</body>
+</html>
